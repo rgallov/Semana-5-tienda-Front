@@ -4,7 +4,7 @@
       <div class="d-flex justify-content-center p-2">
         <img class="team-image__img" v-bind:src="member.imagen" alt="Developer" />
       </div>
-      <div class="card-body">
+      <div class="card-body" style="overflow: auto; height: 200px">
         <h5 class="card-title">{{ member.nombre }}</h5>
         <p class="card-text" v-html="member.descripcion"></p>
       </div>
