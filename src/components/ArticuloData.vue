@@ -1,16 +1,20 @@
 <template>
   <div>
-    <div class="d-flex justify-content-center align-items-center ml-2">
+    <div class="d-flex justify-content-center align-items-center ml-2 articulo">
       <div class="p-3 col-6 ml-2">
         <img :src="dataImg" class="imagen_producto" />
       </div>
-      <div class="p-2 col-6 m-1 bg-light">
-        <h5>Categoria:</h5>
-        <p>{{ articulo.categoria.nombre }}</p>
-        <h5>Producto:</h5>
-        <p>{{ articulo.nombre }}</p>
-        <h5>Descripción:</h5>
-        <p>{{ articulo.descripcion }}</p>
+      <div class="p-2 col-6 m-1 bg-light articulo">
+        <div class="" style="height: 340px">
+          <h5>Categoria:</h5>
+          <p>{{ articulo.categoria.nombre }}</p>
+          <h5>Producto:</h5>
+          <p>{{ articulo.nombre }}</p>
+          <h5>Descripción:</h5>
+          <div style="height: 170px" class="overflow-auto">
+            {{ articulo.descripcion }}
+          </div>
+        </div>
         <div class="d-flex container-fluid justify-content-end pb-2 mt-2">
           <a
             class="btn btn-outline-success mr-2"
@@ -69,5 +73,9 @@ export default {
 .imagen_producto {
   width: 200px;
   height: 200px;
+}
+
+.articulo {
+  height: 400px;
 }
 </style>

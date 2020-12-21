@@ -3,13 +3,14 @@
     <h1>Bienvenido</h1>
 
     <div
-      class="d-flex row_person pt-2 pb-2 justify-content-between col- align-center m-auto"
+      class="d-flex row_person pt-2 pb-2 justify-content-between align-center m-auto"
+      v-if="logueado"
     >
-      <div class="col-5 col_person">
+      <div class="ml-2">
         <i class="fas fa-user-tie font-person"></i>
       </div>
       <div class="d-flex flex-col">
-        <div class="justify-content-start text-left">
+        <div class="justify-content-start text-left ml-2">
           <h5 class="mr-2">Nombre:</h5>
           <p>
             <input type="text" ref="name" :value="user.nombre" class="mr-2" />
@@ -39,19 +40,27 @@ export default {
       let me = this;
       let header = { Token: this.$store.state.token };
       let configuracion = { headers: header };
-      axios
-        .get("usuario/queryUserAuth", configuracion)
-        .then(function (response) {
-          me.user = response.data;
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      if (this.$store.state.token) {
+        axios
+          .get("usuario/queryUserAuth", configuracion)
+          .then(function (response) {
+            me.user = response.data;
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
     },
+
     save() {
       this.user.firstName = this.$refs["first_name"].value;
       this.user.lastName = this.$refs["last_name"].value;
       this.isEditing = !this.isEditing;
+    },
+  },
+  computed: {
+    logueado() {
+      return this.$store.state.usuario;
     },
   },
   mounted() {
