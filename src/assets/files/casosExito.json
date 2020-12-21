@@ -1,0 +1,39 @@
+{
+    "casos": [
+        {
+            "codigo": "1",
+            "nombre": "Coca-Cola: “A Bottle Love Story”",
+            "descripcion": "La campaña “Love Story“, relata la relación entre una botella Fanta y una Coca Zero, que se reúnen una y otra vez, gracias al método de reciclaje que tiene Coca-Cola, haciendo de su historia de amor, una de las más duraderas, estables y sobre todo, sustentable.",
+            "imagen":"images/cocalogo.png",
+            "url":"https://www.youtube.com/watch?v=e8tF9XevVlo&feature=youtu.be"
+        },
+        {
+            "codigo": "2",
+            "nombre": "Kraft: “Empaques sostenibles”",
+            "descripcion": "Su producto, Oscar Mayer Deli Creations, actualmente utiliza el 30 por ciento menos de cartón gracias al tipo de diseño que tiene. Esta reducción equivale a cerca de 1,2 millones de libra de envase cada año.",
+            "imagen":"images/logo.png",
+            "url":"https://www.america-retail.com/sostenibilidad/sostenibilidad-empaques-casos-exito/"
+        },
+        {
+            "codigo": "3",
+            "nombre": "H&M: “Bring It On”",
+            "descripcion": "En cada una de las tiendas de H&M, se instaló un contenedor donde los clientes pueden depositar sus bolsas de ropa vieja, las cuales serán enviadas a grandes fábricas en donde les darán una nueva oportunidad. Cada una de las piezas recogidas se clasifica en más de 350 categorías; las que están en buen estado y que aún se puedan utilizar, serán distribuidas mundialmente como artículos de segunda mano.",
+            "imagen":"images/hymlogo.png",
+            "url":"https://www.expoknews.com/programas-de-reciclaje-de-hm/"
+        },
+        {
+            "codigo": "4",
+            "nombre": "TOP TERRA",
+            "descripcion": "La marca Top Terra tomó la decisión de crear un envase hecho de material 100% reciclado para su detergente líquido. La clave, de acuerdo con esta iniciativa, está en circular el plástico, evitando que se genere más materia prima innecesariamente.",
+            "imagen":"images/topLogo.png",
+            "url":"https://www.portafolio.co/negocios/lanzan-ecoempaque-100-reciclado-hecho-en-el-pais-529409"
+        },
+        {
+            "codigo": "5",
+            "nombre": "PLASTICOMBUSTIBLES-PEPSICO",
+            "descripcion": "Dr. Calderón Laboratorios en su preocupación por contribuir a descontaminar y proteger el medio ambiente, desde 2011 ha dirigido sus esfuerzos hacia la transformación de residuos de origen plástico en combustibles líquidos como gasolina, kerosene y diesel, a través del proceso de pirólisis, una tecnología limpia y verde.",
+            "imagen":"images/pepsico.png",
+            "url":"http://www.drcalderonlabs.com/Plasticombustibles/Plegable%20Plasticombustibles%207%20Web.pdf"
+        }
+    ]
+}
