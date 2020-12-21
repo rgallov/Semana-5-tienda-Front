@@ -6,8 +6,8 @@
       >
         <h2 class="bold">Productos</h2>
       </div>
-      <div class="container-fluid">
-        <div class="d-flex justify-content-center">
+      <div>
+        <div class="d-flex flex-row justify-content-start flex-wrap">
           <div
             v-for="(art, indice) of datos"
             :key="art.id"
@@ -61,10 +61,6 @@ export default {
 };
 </script>
 <style scoped>
-.imagen_producto {
-  width: 80%;
-}
-
 .bold {
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
 }
