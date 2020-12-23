@@ -6,6 +6,7 @@ import Login from '../components/Login.vue';
 import store from '../store/index';
 import Articulo from '../components/Articulo.vue';
 import Usuario from '../components/Usuario.vue';
+import NoAccess from "../components/NoAccess.vue";
 
 
 Vue.use(VueRouter);
@@ -25,7 +26,15 @@ const routes = [{
         component: Home,
         meta: {
             public: true
+        }
 
+    },
+    {
+        path: "/noAccess",
+        name: "noAccess",
+        component: NoAccess,
+        meta: {
+            public: true
         }
 
     },
@@ -34,7 +43,10 @@ const routes = [{
         name: "categoria",
         component: Categoria,
         meta: {
-            auth: true
+            auth: true,
+            Vendedor:true,
+            Administrador: true,
+            Almacenero: true
         }
 
     },
@@ -44,7 +56,10 @@ const routes = [{
         name: "articulo",
         component: Articulo,
         meta: {
-            auth: true
+            auth: true,
+            // Vendedor:false,
+            Administrador: true,
+            // Almacenero: false
         }
 
     },
@@ -54,7 +69,10 @@ const routes = [{
         name: "usuario",
         component: Usuario,
         meta: {
-            auth: true
+            auth: true,
+            // Vendedor:false,
+            Administrador: true,
+            // Almacenero: false
         }
 
     },
@@ -81,8 +99,15 @@ router.beforeEach((to, from, next) => {
         next();
     } else if (store.state.usuario) {
         if (to.matched.some(record => record.meta.auth)) {
-            console.log(store.state.usuario);
-            next();
+            if (to.matched.some(record =>  record.meta.Administrador && store.state.usuario.rol == 'Administrador')) {
+                next();
+            }else if(to.matched.some(record => record.meta.Vendedor && store.state.usuario.rol == 'Vendedor')) {
+                next();
+            }else if(to.matched.some(record => record.meta.Almacenero && store.state.usuario.rol == 'Almacenero')) {
+                next();
+            }else{
+                next({ name: 'noAccess' });        
+            }
         }
     } else {
         next({ name: 'login' });

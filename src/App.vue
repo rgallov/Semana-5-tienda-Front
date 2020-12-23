@@ -244,7 +244,7 @@
                     <v-list-item-title> Almacén </v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
-                <v-list-item :to="{ name: 'categoria' }">
+                <v-list-item :to="{ name: 'categoria' }" v-if="logueadoRol">
                   <v-list-item-action>
                     <v-icon color="orange">fas fa-layer-group</v-icon>
                   </v-list-item-action>
@@ -252,7 +252,7 @@
                     <v-list-item-title> Categorías </v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
-                <v-list-item :to="{ name: 'articulo' }">
+                <v-list-item :to="{ name: 'articulo' }" v-if="logueadoRol">
                   <v-list-item-action>
                     <v-icon color="green">delete</v-icon>
                   </v-list-item-action>
@@ -331,6 +331,17 @@ export default {
   computed: {
     logueado() {
       return this.$store.state.usuario;
+    },
+    logueadoRol() {
+      if (this.$store.state.usuario.rol === "Administrador") {
+        return true;
+      } else if (this.$store.state.usuario.rol === "Vendedor") {
+        return true;
+      } else if (this.$store.state.usuario.rol === "Adminsitrador") {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
   created() {
